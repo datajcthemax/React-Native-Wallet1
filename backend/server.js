@@ -4,6 +4,9 @@ import { sql } from "./config/db.js";
 
 dotenv.config();
 
+// middleware
+app.use(express.json());
+
 const app = express()
 
 const PORT = process.env.PORT || 5001;
@@ -27,9 +30,14 @@ async function initDB() {
 }
 
 
-app.get("/", (req, res) => {
-    res.send("It's working");
-});
+app.post("/api/transactions", async (req,res) => {
+    //title, amount, category, user_id
+    try {
+        const {title, amount, category,user_id}
+    } catch (error) {
+        
+    }
+})
 
 console.log("my port:", process.env.PORT)
 
